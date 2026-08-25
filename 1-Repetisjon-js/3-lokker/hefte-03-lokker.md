@@ -6,13 +6,7 @@
 
 ## Slik jobber du med dette heftet
 
-Heftet følger arbeidsmåten **PRIMM**, som du kjenner fra de forrige heftene:
-
-- **Predict (forutsi):** Les koden, og forsøk å forutsi hva som blir resultatet.
-- **Run (kjør):** Skriv av koden, og kjør programmet. Forklar eventuelle avvik.
-- **Investigate (undersøk):** Gjør små endringer, forutsi, og kjør på nytt.
-- **Modify (endre):** Gjør større endringer og utvid programmet.
-- **Make (lag):** Lag ditt helt eget program — i oppgavesettet bakerst.
+Du jobber på samme måte som i de forrige heftene: Les koden først, og forsøk å forutsi hva som blir resultatet. Skriv deretter av koden, kjør programmet, og forklar eventuelle avvik. Videre gjør du de nummererte oppgavene i tur og orden — små endringer først, så større — helt til programmet er blitt ditt eget. Bakerst i heftet lager du egne programmer fra bunnen av, i tre vanskegrader.
 
 > **💡 Tips:** Gjett alltid på resultatet etter hver endring, **før** du kjører programmet på nytt. Det er selve gjettingen som gjør at du lærer.
 
@@ -37,8 +31,8 @@ if (voksen) {
 
 Før vi lærer noe nytt, henter vi fram alt du kan fra før: variabler, datatyper, innlesing fra kommandolinja med `process.argv`, logiske uttrykk og `if`-`else`. Programmet ovenfor er innloggingshilsenen på et nettsted.
 
-1. Les koden. Hva blir utskriften av `node innlogging.js Ola 17`? **[Predict]**
-2. Lag fila `innlogging.js`, skriv av koden, og kjør programmet. Kjør også med deg selv som argument. **[Run]**
+1. Les koden. Hva blir utskriften av `node innlogging.js Ola 17`?
+2. Lag fila `innlogging.js`, skriv av koden, og kjør programmet. Kjør også med deg selv som argument.
 3. Legg merke til kodelinje 3: `alder >= 18` er et **logisk uttrykk** som blir `true` eller `false`, og verdien lagres i den **boolske variabelen** `voksen`.
 
 Programmet bruker alle de tre datatypene du har lært:
@@ -51,7 +45,7 @@ Programmet bruker alle de tre datatypene du har lært:
 
 Med operatoren `typeof` kan du spørre JavaScript hvilken datatype en variabel har.
 
-4. Legg til disse kodelinjene nederst, og kjør programmet: **[Investigate]**
+4. Legg til disse kodelinjene nederst, og kjør programmet:
 
 ```js
 console.log(typeof brukernavn);
@@ -59,7 +53,7 @@ console.log(typeof alder);
 console.log(typeof voksen);
 ```
 
-5. Fjern `Number(...)` på kodelinje 2, slik at den blir `let alder = process.argv[3];`. Kjør `node innlogging.js Ola 17` på nytt. Hva ble utskriften på linja «Om 10 år ...»? Hva sier `typeof alder` nå? **[Investigate]**
+5. Fjern `Number(...)` på kodelinje 2, slik at den blir `let alder = process.argv[3];`. Kjør `node innlogging.js Ola 17` på nytt. Hva ble utskriften på linja «Om 10 år ...»? Hva sier `typeof alder` nå?
 
 > **⚠️ Merk:** Argumenter fra kommandolinja er alltid tekst. Uten `Number(...)` er `alder` teksten `"17"`, og `+` limer da sammen tekst i stedet for å regne: `"17" + 10` blir `"1710"`. Dette er en av de vanligste feilene i JavaScript — nå vet du hvordan du oppdager den med `typeof`.
 
@@ -79,12 +73,12 @@ console.log("Hei!");
 console.log("Hei!");
 ```
 
-1. Lag fila `hei.js`, skriv av koden, og kjør programmet. **[Run]**
+1. Lag fila `hei.js`, skriv av koden, og kjør programmet.
 2. Tenk deg at programmet skulle skrevet `Hei!` 1000 ganger. Hvor mange kodelinjer hadde du trengt?
 
 Det må finnes en bedre måte — og det gjør det. En **løkke** gjentar kodelinjer så mange ganger vi vil:
 
-3. Erstatt hele programmet med koden nedenfor, og kjør det. **[Run]**
+3. Erstatt hele programmet med koden nedenfor, og kjør det.
 
 ```js
 let i = 1;
@@ -103,16 +97,16 @@ En `while`-løkke ligner på en `if`-setning, men i stedet for å kjøre blokka 
 | Blokk | `{ ... }` | kodelinjene som gjentas |
 | Oppdatering | `i = i + 1;` | telle-variabelen endres, ellers stopper løkka aldri |
 
-4. Endre `i <= 5` til `i <= 1000`. Kjør programmet, og se kraften i en løkke. **[Investigate]**
-5. Endre `console.log("Hei!")` til `` console.log(`Hei nr. ${i}`) ``. Kjør programmet, og se hvordan `i` endrer seg for hver runde. **[Investigate]**
-6. Endre startverdien til `let i = 3;`. Hva blir første og siste utskrift? Gjett før du kjører. **[Predict]**
-7. Endre `i <= 1000` tilbake til `i <= 5`, og endre deretter `<=` til `<`. Hvor mange ganger kjører løkka nå? **[Investigate]**
+4. Endre `i <= 5` til `i <= 1000`. Kjør programmet, og se kraften i en løkke.
+5. Endre `console.log("Hei!")` til `` console.log(`Hei nr. ${i}`) ``. Kjør programmet, og se hvordan `i` endrer seg for hver runde.
+6. Endre startverdien til `let i = 3;`. Hva blir første og siste utskrift? Gjett før du kjører.
+7. Endre `i <= 1000` tilbake til `i <= 5`, og endre deretter `<=` til `<`. Hvor mange ganger kjører løkka nå?
 
 > **🐞 Uendelig løkke:** Fjern kodelinja `i = i + 1;` og kjør programmet. Vilkåret blir aldri `false`, så løkka stopper aldri — dette kalles en **uendelig løkke**. Trykk `Ctrl + C` i terminalen for å stoppe programmet. Alle utviklere lager uendelige løkker iblant; nå vet du hvordan du kommer deg ut av dem. Husk å sette kodelinja tilbake!
 
 > **💡 Husk fra hefte 1:** Kortformen `i += 1` gjør det samme som `i = i + 1`. Enda kortere er `i++`, som også øker `i` med 1. Tilsvarende minker `i--` verdien med 1.
 
-8. En løkke kan også telle **nedover**. Endre programmet til en nedtelling før en lansering: det skal telle ned fra 10 til 1, og til slutt skrive `Lansert!`. **[Modify]**
+8. En løkke kan også telle **nedover**. Endre programmet til en nedtelling før en lansering: det skal telle ned fra 10 til 1, og til slutt skrive `Lansert!`.
 
 ```text
 10
@@ -142,8 +136,8 @@ for (startverdi; vilkår; oppdatering) {
 }
 ```
 
-1. Les koden øverst. Hvilke tall skrives ut? Legg merke til at løkka starter på 0. **[Predict]**
-2. Lag fila `teller.js`, skriv av koden, og kjør programmet. **[Run]**
+1. Les koden øverst. Hvilke tall skrives ut? Legg merke til at løkka starter på 0.
+2. Lag fila `teller.js`, skriv av koden, og kjør programmet.
 
 Nedenfor ser du fire kodebiter som inneholder feil.
 
@@ -171,18 +165,18 @@ for (let i = 0; i < 3; i--) {
 }
 ```
 
-3. Bestem feilen i hvert av de fire tilfellene. Én av kodebitene er ekstra lumsk: den gir ingen feilmelding, men stopper aldri. Hvilken, og hvorfor? **[Investigate]**
-4. Endre `i < 3` til `i < 5` i programmet ditt. Kjør programmet. **[Investigate]**
+3. Bestem feilen i hvert av de fire tilfellene. Én av kodebitene er ekstra lumsk: den gir ingen feilmelding, men stopper aldri. Hvilken, og hvorfor?
+4. Endre `i < 3` til `i < 5` i programmet ditt. Kjør programmet.
 5. Endre `i < 5` til `i < 8`. Gjett på hvilket tall som blir skrevet ut til sist, før du kjører.
 6. Endre startverdien slik at løkka starter på 2.
 7. Endre løkka slik at den skriver ut alle hele tall fra og med -10 til og med -1.
-8. Skriv ut alle hele tall fra og med -5 **til og med** 10. **[Modify]**
+8. Skriv ut alle hele tall fra og med -5 **til og med** 10.
 
 > **⚠️ Merk:** Vilkåret `i < 8` betyr at 8 **ikke** er med — siste tall blir 7. Vil du ha med 8, skriver du `i <= 8`. Forskjellen på `<` og `<=` kjenner du fra hefte 2.
 
 Et nettsted trenger midlertidige brukernavn til alle som ikke har logget inn: `gjest1`, `gjest2`, `gjest3` og så videre.
 
-9. Endre programmet slik at det skriver ut brukernavnene `gjest1` til og med `gjest100`, ett per linje. Bruk en template-streng med `${...}`, slik du lærte i hefte 1. **[Modify]**
+9. Endre programmet slik at det skriver ut brukernavnene `gjest1` til og med `gjest100`, ett per linje. Bruk en template-streng med `${...}`, slik du lærte i hefte 1.
 
 ---
 
@@ -200,15 +194,15 @@ console.log(strek);
 
 Utviklere bruker ofte løkker til å **bygge opp tekst**, bit for bit. Trikset er en tekstvariabel som starter tom (`""`), og som får limt på litt mer tekst for hver runde i løkka — akkurat slik du limte sammen tekster med `+` i hefte 1.
 
-1. Les koden. Hvordan ser utskriften ut? **[Predict]**
-2. Lag fila `banner.js`, skriv av koden, og kjør programmet. **[Run]**
-3. Endre `i < 20` til `i < 40`. Kjør programmet. **[Investigate]**
+1. Les koden. Hvordan ser utskriften ut?
+2. Lag fila `banner.js`, skriv av koden, og kjør programmet.
+3. Endre `i < 20` til `i < 40`. Kjør programmet.
 4. Endre `"="` til `"-"`. Kjør programmet.
-5. Endre programmet slik at bredden på streken leses inn fra kommandolinja: `node banner.js 30` skal gi en strek på 30 tegn. **[Modify]**
+5. Endre programmet slik at bredden på streken leses inn fra kommandolinja: `node banner.js 30` skal gi en strek på 30 tegn.
 
 Nå skal vi bygge noe enda mer nyttig: HTML — språket alle nettsider er skrevet i. En punktliste i HTML ser slik ut: `<ul>` starter lista, hvert punkt ligger i `<li>` og `</li>`, og `</ul>` avslutter lista.
 
-6. Lag fila `liste.js` med koden nedenfor. Les den først, og gjett på utskriften. **[Predict]**
+6. Lag fila `liste.js` med koden nedenfor. Les den først, og gjett på utskriften.
 
 ```js
 let html = "<ul>\n";
@@ -221,7 +215,7 @@ console.log(html);
 
 > **💡 Nytt:** Tegnkombinasjonen `\n` inne i en tekst betyr **linjeskift**. Uten den hadde hele HTML-koden havnet på én lang linje.
 
-7. Kjør programmet. Utskriften skal bli: **[Run]**
+7. Kjør programmet. Utskriften skal bli:
 
 ```text
 <ul>
@@ -231,8 +225,8 @@ console.log(html);
 </ul>
 ```
 
-8. Endre programmet slik at lista får 8 punkter. **[Investigate]**
-9. Endre programmet slik at antall punkter leses inn fra kommandolinja. **[Modify]**
+8. Endre programmet slik at lista får 8 punkter.
+9. Endre programmet slik at antall punkter leses inn fra kommandolinja.
 
 Dette er ikke en lekeoppgave: det er nøyaktig slik nettsider blir til. Når en nettbutikk viser 500 varer, er det en løkke som har generert HTML for hver eneste vare. Senere i utdanningen din skal rammeverk gjøre dette for deg — men nå vet du hva som faktisk skjer under panseret.
 
@@ -254,7 +248,7 @@ I et spill får du 100 poeng for å klare nivå 1, og hvert nivå gir 50 poeng m
 
 Trikset er en variabel `total` som starter på 0, og som får hvert nivås poeng lagt til seg — én runde av gangen. Dette mønsteret kalles en **akkumulator**, og du finner det overalt: handlekurver som summerer priser, spill som teller poeng, apper som teller skritt.
 
-1. Les koden nøye. Følg med på hvordan variablene endrer seg for hver runde: fyll ut en tabell som denne på papir, før du kjører programmet: **[Predict]**
+1. Les koden nøye. Følg med på hvordan variablene endrer seg for hver runde: fyll ut en tabell som denne på papir, før du kjører programmet:
 
 | Runde | `poeng` ved start | `total` etter runden | `poeng` etter runden |
 |---|---|---|---|
@@ -262,11 +256,11 @@ Trikset er en variabel `total` som starter på 0, og som får hvert nivås poeng
 | 2 | 150 | ? | ? |
 | 3 | ? | ? | ? |
 
-2. Lag fila `poeng.js`, skriv av koden, og kjør programmet. Stemte tabellen din? **[Run]**
-3. Legg til kodelinja `` console.log(`Nivå ${nivaa}: ${poeng} poeng`); `` **øverst** inne i løkka, før de to andre kodelinjene. Kjør programmet. **[Investigate]**
-4. Flytt den nye kodelinja **nederst** i løkka. Gjett hva som endrer seg i utskriften, før du kjører. Forklar forskjellen. **[Investigate]**
-5. Endre programmet slik at antall nivåer leses inn fra kommandolinja. `node poeng.js 8` skal gi totalen etter 8 nivåer. **[Modify]**
-6. Utvid programmet slik at det til slutt også skriver ut gjennomsnittspoeng per nivå. Del totalen på antall nivåer. **[Modify]**
+2. Lag fila `poeng.js`, skriv av koden, og kjør programmet. Stemte tabellen din?
+3. Legg til kodelinja `` console.log(`Nivå ${nivaa}: ${poeng} poeng`); `` **øverst** inne i løkka, før de to andre kodelinjene. Kjør programmet.
+4. Flytt den nye kodelinja **nederst** i løkka. Gjett hva som endrer seg i utskriften, før du kjører. Forklar forskjellen.
+5. Endre programmet slik at antall nivåer leses inn fra kommandolinja. `node poeng.js 8` skal gi totalen etter 8 nivåer.
+6. Utvid programmet slik at det til slutt også skriver ut gjennomsnittspoeng per nivå. Del totalen på antall nivåer.
 
 ---
 
@@ -288,16 +282,16 @@ Tabeller på nettsider har ofte **zebrastriper**: annenhver rad får grå bakgru
 
 > **💡 Husk fra hefte 2:** `rad % 2 === 0` er `true` nøyaktig når `rad` er et partall, fordi `%` gir resten i divisjonen.
 
-1. Les koden. Hvilken farge får rad 1? Rad 6? **[Predict]**
-2. Lag fila `zebra.js`, skriv av koden, og kjør programmet. **[Run]**
-3. Designeren ombestemmer seg: nå skal hver **tredje** rad være grå i stedet. Endre vilkåret, og kjør programmet. Hvilke rader ble grå? **[Investigate]**
-4. Utvid med `else if` slik at rad nummer 1 får en egen utskrift: `Rad 1: overskrift`. Pass på rekkefølgen i `if`-kjeden — det lærte du i hefte 2. **[Modify]**
+1. Les koden. Hvilken farge får rad 1? Rad 6?
+2. Lag fila `zebra.js`, skriv av koden, og kjør programmet.
+3. Designeren ombestemmer seg: nå skal hver **tredje** rad være grå i stedet. Endre vilkåret, og kjør programmet. Hvilke rader ble grå?
+4. Utvid med `else if` slik at rad nummer 1 får en egen utskrift: `Rad 1: overskrift`. Pass på rekkefølgen i `if`-kjeden — det lærte du i hefte 2.
 
 Ofte skal ikke løkka skrive ut noe for hver runde, men **telle** hvor mange ganger noe skjer. Da trenger vi en tellevariabel som øker med 1 hver gang vilkåret slår til.
 
 Datoprogrammering er noe av det utviklere styrer mest med, og skuddår stiller alltid til bry. Fra hefte 2 husker du reglene: et årstall er skuddår når det er delelig med 4 men ikke med 100 — eller delelig med 400.
 
-5. Lag fila `skuddaar.js` med koden nedenfor. Én kodelinje mangler — plasser kodelinja `antall += 1;` på riktig sted. Tenk nøye gjennom hvilken blokk den må stå i. **[Modify]**
+5. Lag fila `skuddaar.js` med koden nedenfor. Én kodelinje mangler — plasser kodelinja `antall += 1;` på riktig sted. Tenk nøye gjennom hvilken blokk den må stå i.
 
 ```js
 let antall = 0;
@@ -309,9 +303,9 @@ for (let aar = 2024; aar <= 2100; aar++) {
 console.log(`Det er ${antall} skuddår fra 2024 til og med 2100`);
 ```
 
-6. Gjett på svaret, og kjør programmet. **[Run]**
-7. Hva skjer om du plasserer `antall += 1;` inne i løkka, men **utenfor** `if`-blokka? Prøv, og forklar resultatet. **[Investigate]**
-8. Utvid programmet slik at det i tillegg skriver ut hvert skuddår det finner, ett per linje, før totalen. **[Modify]**
+6. Gjett på svaret, og kjør programmet.
+7. Hva skjer om du plasserer `antall += 1;` inne i løkka, men **utenfor** `if`-blokka? Prøv, og forklar resultatet.
+8. Utvid programmet slik at det i tillegg skriver ut hvert skuddår det finner, ett per linje, før totalen.
 
 ---
 
@@ -330,17 +324,17 @@ Når en app mister kontakten med serveren, prøver den igjen — men ikke i vill
 
 Her vet vi ikke antall runder på forhånd — men vi vet **når løkka skal stoppe**. Da er `while` det naturlige valget.
 
-1. Les koden. Hvor mange ganger prøver appen seg, og hvilke ventetider skrives ut? **[Predict]**
-2. Lag fila `backoff.js`, skriv av koden, og kjør programmet. **[Run]**
+1. Les koden. Hvor mange ganger prøver appen seg, og hvilke ventetider skrives ut?
+2. Lag fila `backoff.js`, skriv av koden, og kjør programmet.
 
 > **⚠️ Merk:** Dersom programmet bare skriver `Gir opp ...` med en gang, har du sannsynligvis skrevet `ventetid > 60` i stedet for `ventetid < 60`. Da er vilkåret `false` fra start, og løkka kjører aldri.
 
-3. Serveren sliter skikkelig, og appen skal holde ut lenger: endre grensen fra 60 til 300 sekunder. Hvilke nye ventetider dukker opp? **[Investigate]**
-4. Endre programmet slik at grensen leses inn fra kommandolinja: `node backoff.js 600`. **[Modify]**
+3. Serveren sliter skikkelig, og appen skal holde ut lenger: endre grensen fra 60 til 300 sekunder. Hvilke nye ventetider dukker opp?
+4. Endre programmet slik at grensen leses inn fra kommandolinja: `node backoff.js 600`.
 
 Det neste vi vil vite, er hvor mange forsøk appen rekker før den gir opp.
 
-5. Legg til følgende tre kodelinjer på riktig plass i programmet. Bare én av dem skal stå **inni** løkka: **[Modify]**
+5. Legg til følgende tre kodelinjer på riktig plass i programmet. Bare én av dem skal stå **inni** løkka:
 
 ```text
 ┌────────────────────────────────────────────┐
@@ -352,14 +346,14 @@ Det neste vi vil vite, er hvor mange forsøk appen rekker før den gir opp.
 └────────────────────────────────────────────┘
 ```
 
-6. Kjør programmet med grense 60, og kontroller svaret mot utskriften fra steg 2. **[Run]**
-7. Utvid programmet med en akkumulator-variabel `ventetTotalt`, slik at det også skriver ut hvor mange sekunder appen ventet til sammen. Med grense 60 skal svaret bli 63. **[Modify]**
+6. Kjør programmet med grense 60, og kontroller svaret mot utskriften fra steg 2.
+7. Utvid programmet med en akkumulator-variabel `ventetTotalt`, slik at det også skriver ut hvor mange sekunder appen ventet til sammen. Med grense 60 skal svaret bli 63.
 
 Til slutt et helt annet problem med samme løsning: En influenser har 500 følgere, og kontoen vokser med 10 % hver uke. Hvor mange uker tar det før kontoen passerer 10 000 følgere?
 
 > **💡 Husk fra hefte 1:** En økning på 10 % tilsvarer vekstfaktoren 1,10 — antallet ganges med 1,10 én gang per uke.
 
-8. Lag programmet `folgere.js` som løser problemet. Bruk blant annet kodelinjene `folgere = folgere * 1.10;` og `uker += 1;`. Utskriften skal være på formen `Etter ... uker har kontoen over 10000 følgere`. **[Make]**
+8. Lag programmet `folgere.js` som løser problemet. Bruk blant annet kodelinjene `folgere = folgere * 1.10;` og `uker += 1;`. Utskriften skal være på formen `Etter ... uker har kontoen over 10000 følgere`.
 
 > **⚠️ For eller while?** Bruk `for` når du vet **antall runder** på forhånd («gjenta for hver av de 8 radene»). Bruk `while` når du bare kjenner **stoppkriteriet** («fortsett til ventetiden passerer grensen»). Begge kan brukes til alt — men programmet blir lettest å lese når du velger riktig verktøy.
 

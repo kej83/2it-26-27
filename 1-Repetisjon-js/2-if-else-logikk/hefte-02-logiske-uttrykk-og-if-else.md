@@ -6,15 +6,9 @@
 
 ## Slik jobber du med dette heftet
 
-Heftet følger arbeidsmåten **PRIMM**. Hvert delkapittel starter med et lite program, og du jobber deg gjennom disse stegene:
+Hvert delkapittel starter med et lite program, og arbeidsmåten er alltid den samme: Les koden først, og forsøk å forutsi hva som blir resultatet — gjerne i diskusjon med en læringspartner. Skriv deretter av koden, kjør programmet, og forklar eventuelle avvik mellom det du gjettet og det som faktisk skjedde. Videre gjør du de nummererte oppgavene i tur og orden: først små endringer, så større, helt til programmet er blitt ditt eget. Bakerst i heftet lager du egne programmer fra bunnen av, i tre vanskegrader.
 
-- **Predict (forutsi):** Les koden, og forsøk å forutsi hva som blir resultatet. Dette steget egner seg godt for diskusjon i par eller små grupper.
-- **Run (kjør):** Skriv av koden, og kjør programmet. Forklar eventuelle avvik mellom forventet og faktisk resultat.
-- **Investigate (undersøk):** Gjør små endringer i koden, forutsi hva som vil skje, og kjør på nytt.
-- **Modify (endre):** Gjør større endringer. Utvid programmet, eller lag et liknende program som bygger på dette.
-- **Make (lag):** Lag ditt helt eget program. Dette nivået møter du i oppgavesettet bakerst i heftet.
-
-Stegene er merket slik i teksten: **[Predict]**, **[Run]**, **[Investigate]**, **[Modify]** og **[Make]**.
+> **💡 Tips:** Gjett alltid på resultatet etter hver endring, **før** du kjører programmet på nytt. Det er selve gjettingen som gjør at du lærer.
 
 ### Husk fra hefte 1: Variabler
 
@@ -47,10 +41,10 @@ console.log(`Din fart er ${fart} km/t`);
 
 Vi skal skrive et program som sjekker om en bil kjører over fartsgrensen.
 
-1. Les koden ovenfor. Hva blir resultatet når du kjører `node fart.js 70`? **[Predict]**
-2. Lag fila `fart.js`, skriv av koden, og kjør programmet med `node fart.js 70`. **[Run]**
+1. Les koden ovenfor. Hva blir resultatet når du kjører `node fart.js 70`?
+2. Lag fila `fart.js`, skriv av koden, og kjør programmet med `node fart.js 70`.
 3. Kjør programmet på nytt med `node fart.js 95`.
-4. Utvid koden som vist nedenfor. Her bruker vi en `if`-setning for å kontrollere om farten er høyere enn fartsgrensen. **[Modify]**
+4. Utvid koden som vist nedenfor. Her bruker vi en `if`-setning for å kontrollere om farten er høyere enn fartsgrensen.
 
 ```js
 let fart = Number(process.argv[2]);
@@ -71,8 +65,8 @@ En `if`-setning i JavaScript består av tre deler:
 
 > **💡 Tips:** Kodelinjer inne i en blokk skal ha innrykk på to mellomrom. Node bryr seg ikke om innrykket, men mennesker gjør det — kode uten innrykk er nesten umulig å lese. Venn deg til det med en gang: det er slik utviklere skriver kode.
 
-5. Kjør programmet både med `node fart.js 95` og `node fart.js 70`. Forklar forskjellen på de to kjøringene. **[Investigate]**
-6. Endre programmet slik at det også regner ut hvor mange km/t du bryter fartsgrensen med. Utskriften ved `node fart.js 95` skal være: **[Modify]**
+5. Kjør programmet både med `node fart.js 95` og `node fart.js 70`. Forklar forskjellen på de to kjøringene.
+6. Endre programmet slik at det også regner ut hvor mange km/t du bryter fartsgrensen med. Utskriften ved `node fart.js 95` skal være:
 
 ```text
 Din fart er 95 km/t
@@ -92,9 +86,9 @@ console.log(tall === 10);
 
 Uttrykk som `tall > 10` kalles **logiske uttrykk**. Et logisk uttrykk har alltid én av to verdier: `true` (sant) eller `false` (usant). I forrige delkapittel brukte vi et logisk uttrykk som vilkår i en `if`-setning. Nå skal vi undersøke uttrykkene for seg selv.
 
-1. Les koden. Hva blir de tre utskriftene når du kjører `node uttrykk.js 12`? **[Predict]**
-2. Lag fila `uttrykk.js`, skriv av koden, og kjør programmet med `node uttrykk.js 12`. **[Run]**
-3. Kjør programmet med `node uttrykk.js 10`. Gjett på resultatet først. **[Investigate]**
+1. Les koden. Hva blir de tre utskriftene når du kjører `node uttrykk.js 12`?
+2. Lag fila `uttrykk.js`, skriv av koden, og kjør programmet med `node uttrykk.js 12`.
+3. Kjør programmet med `node uttrykk.js 10`. Gjett på resultatet først.
 
 JavaScript har disse sammenligningsoperatorene:
 
@@ -109,20 +103,20 @@ JavaScript har disse sammenligningsoperatorene:
 
 > **⚠️ Merk:** Ett likhetstegn og tre likhetstegn gjør helt forskjellige ting! Kodelinja `tall = 10` **tildeler** verdien 10 til variabelen `tall`, mens `tall === 10` **tester** om `tall` er lik 10.
 
-4. Legg til to nye kodelinjer som skriver ut resultatet av `tall >= 10` og `tall !== 10`. Kjør programmet med argumentene 9, 10 og 11. **[Investigate]**
-5. Fjern `Number(...)` på første kodelinje, slik at den blir `let tall = process.argv[2];`. Kjør `node uttrykk.js 10` på nytt. Hvilken utskrift endret seg? **[Investigate]**
+4. Legg til to nye kodelinjer som skriver ut resultatet av `tall >= 10` og `tall !== 10`. Kjør programmet med argumentene 9, 10 og 11.
+5. Fjern `Number(...)` på første kodelinje, slik at den blir `let tall = process.argv[2];`. Kjør `node uttrykk.js 10` på nytt. Hvilken utskrift endret seg?
 
 > **⚠️ Merk:** Argumentet fra kommandolinja er teksten `"10"`, ikke tallet `10`. Operatoren `===` krever at både **verdien og typen** er lik, så `"10" === 10` er `false`. Det finnes også en operator `==` som slurver med typene — den skal du ikke bruke. Utviklere bruker `===` og `!==`.
 
 6. Angre endringen, slik at første kodelinje igjen bruker `Number(...)`.
-7. Logiske uttrykk kan også sammenligne tekst. Lag fila `hilsen.js` med koden nedenfor, og kjør både `node hilsen.js Ola` og `node hilsen.js Kari`. **[Investigate]**
+7. Logiske uttrykk kan også sammenligne tekst. Lag fila `hilsen.js` med koden nedenfor, og kjør både `node hilsen.js Ola` og `node hilsen.js Kari`.
 
 ```js
 let navn = process.argv[2];
 console.log(navn === "Ola");
 ```
 
-8. Utvid `hilsen.js` med en `if`-setning som skriver ut `Hei, sjef!` bare når navnet er `Ola`. **[Modify]**
+8. Utvid `hilsen.js` med en `if`-setning som skriver ut `Hei, sjef!` bare når navnet er `Ola`.
 
 ---
 
@@ -139,12 +133,12 @@ Vi skal lage et program som undersøker delelighet.
 
 > **💡 Husk fra hefte 1:** Operatoren `%` gir **resten** i en heltallsdivisjon. For eksempel gir `6 % 2` resultatet `0`, mens `7 % 2` gir `1`. Et tall er altså et partall nøyaktig når `tall % 2 === 0`.
 
-1. Les koden. Hva skjer når du kjører `node partall.js 8`? Hva med `node partall.js 13`? **[Predict]**
-2. Lag fila `partall.js`, skriv av koden, og kjør begge kjøringene fra steg 1. **[Run]**
+1. Les koden. Hva skjer når du kjører `node partall.js 8`? Hva med `node partall.js 13`?
+2. Lag fila `partall.js`, skriv av koden, og kjør begge kjøringene fra steg 1.
 
 Ved `node partall.js 13` skriver ikke programmet ut noen ting. Det vil vi gjøre noe med. Med `else` kan vi bestemme hva som skal skje når vilkåret er `false`:
 
-3. Utvid koden med en `else`-blokk: **[Modify]**
+3. Utvid koden med en `else`-blokk:
 
 ```js
 let tall = Number(process.argv[2]);
@@ -155,11 +149,11 @@ if (tall % 2 === 0) {
 }
 ```
 
-4. Kjør programmet flere ganger med både partall og oddetall som argument. **[Run]**
+4. Kjør programmet flere ganger med både partall og oddetall som argument.
 
 Videre kan vi undersøke delelighet med andre tall enn 2. La oss undersøke om tallet er delelig med 7.
 
-5. Legg til følgende kodelinjer i riktig rekkefølge nederst i programmet: **[Modify]**
+5. Legg til følgende kodelinjer i riktig rekkefølge nederst i programmet:
 
 ```text
 ┌─────────────────────────────────────────┐
@@ -189,7 +183,7 @@ Videre kan vi undersøke delelighet med andre tall enn 2. La oss undersøke om t
 
 Vi skal lage et program som tar inn alderen din og skriver ut riktig billettpris på kino.
 
-1. Les koden nedenfor. Hva blir resultatet av `node kino.js 8`? **[Predict]**
+1. Les koden nedenfor. Hva blir resultatet av `node kino.js 8`?
 
 ```js
 let alder = Number(process.argv[2]);
@@ -198,8 +192,8 @@ if (alder < 12) {
 }
 ```
 
-2. Lag fila `kino.js`, skriv av koden, og kjør programmet. **[Run]**
-3. Legg til en ny `if`-setning nederst for å undersøke om alderen er under 18: **[Modify]**
+2. Lag fila `kino.js`, skriv av koden, og kjør programmet.
+3. Legg til en ny `if`-setning nederst for å undersøke om alderen er under 18:
 
 ```js
 if (alder < 18) {
@@ -207,9 +201,9 @@ if (alder < 18) {
 }
 ```
 
-4. Kjør `node kino.js 8` på nytt. Programmet skriver nå ut **to** priser. Forklar hvorfor. **[Investigate]**
-5. Endre `if (alder < 18) {` til `else if (alder < 18) {`. Kjør `node kino.js 8` og deretter `node kino.js 14`. Hva er forskjellen på `if` og `else if`? **[Investigate]**
-6. Legg til en `else`-blokk til slutt: **[Modify]**
+4. Kjør `node kino.js 8` på nytt. Programmet skriver nå ut **to** priser. Forklar hvorfor.
+5. Endre `if (alder < 18) {` til `else if (alder < 18) {`. Kjør `node kino.js 8` og deretter `node kino.js 14`. Hva er forskjellen på `if` og `else if`?
+6. Legg til en `else`-blokk til slutt:
 
 ```js
 let alder = Number(process.argv[2]);
@@ -222,13 +216,13 @@ if (alder < 12) {
 }
 ```
 
-7. Gjett hva som blir utskriften for argumentene 25, 12 og 11, før du kjører programmet med hver av dem. **[Predict]**
+7. Gjett hva som blir utskriften for argumentene 25, 12 og 11, før du kjører programmet med hver av dem.
 
 Programmet leses ovenfra og ned: JavaScript tester vilkårene ett for ett, og kjører blokka til det **første** vilkåret som er `true`. Resten av kjeden hoppes over. Derfor trenger ikke vilkåret på linje 4 å si `alder >= 12 && alder < 18` — kommer programmet dit, vet vi allerede at alderen er minst 12.
 
-8. Bytt rekkefølge på de to første vilkårene, slik at programmet tester `alder < 18` først og `alder < 12` etterpå. Kjør `node kino.js 8`. Hva gikk galt, og hvorfor? **[Investigate]**
+8. Bytt rekkefølge på de to første vilkårene, slik at programmet tester `alder < 18` først og `alder < 12` etterpå. Kjør `node kino.js 8`. Hva gikk galt, og hvorfor?
 9. Bytt tilbake til riktig rekkefølge.
-10. Kinoen innfører honnørbillett: alle som er 67 år eller eldre, skal betale 110 kr. Utvid programmet med en ny `else if`-gren. Tenk gjennom hvor i kjeden den må stå. Test godt! **[Modify]**
+10. Kinoen innfører honnørbillett: alle som er 67 år eller eldre, skal betale 110 kr. Utvid programmet med en ny `else if`-gren. Tenk gjennom hvor i kjeden den må stå. Test godt!
 
 ---
 
@@ -252,12 +246,12 @@ if (hoyde > 140) {
 
 Dette programmet tar imot **to** argumenter: alder og høyde. Det kjøres for eksempel slik: `node karusell.js 13 150`.
 
-1. Les koden. Hva blir resultatet av `node karusell.js 13 150`? **[Predict]**
-2. Lag fila `karusell.js`, skriv av koden, og kjør `node karusell.js 13 150`. **[Run]**
+1. Les koden. Hva blir resultatet av `node karusell.js 13 150`?
+2. Lag fila `karusell.js`, skriv av koden, og kjør `node karusell.js 13 150`.
 
 Vi ser at meldingen `Du kan kjøre karusellen` dukket opp to ganger. Det er helt klart unødvendig. Vi kan slå sammen de to `if`-setningene med den **logiske operatoren** `||`, som betyr **eller**:
 
-3. Endre programmet slik: **[Modify]**
+3. Endre programmet slik:
 
 ```js
 let alder = Number(process.argv[2]);
@@ -267,11 +261,11 @@ if (alder >= 12 || hoyde > 140) {
 }
 ```
 
-4. Test programmet med følgende argumenter. Gjett på resultatet før hver kjøring: **[Predict]**
+4. Test programmet med følgende argumenter. Gjett på resultatet før hver kjøring:
    - `node karusell.js 13 150`
    - `node karusell.js 11 150`
    - `node karusell.js 11 140`
-5. Legg til kode slik at brukeren får tilbakemeldingen `Beklager, du kan ikke kjøre karusellen` dersom ingen av kravene er oppfylt. **[Modify]**
+5. Legg til kode slik at brukeren får tilbakemeldingen `Beklager, du kan ikke kjøre karusellen` dersom ingen av kravene er oppfylt.
 
 > **💡 Tips:** Tegnet `|` skrives på norsk tastatur med tasten til venstre for `1` (sammen med `§`), ofte i kombinasjon med `AltGr` eller `Shift` avhengig av tastaturet ditt.
 
@@ -291,12 +285,12 @@ Variabler kan også gis verdiene `true` eller `false`, i tillegg til tall eller 
 
 > **💡 Tips:** I JavaScript skriver vi variabelnavn med **camelCase**: første ord med liten bokstav, og hvert nye ord med stor bokstav, som i `fiskIVannet` og `likerAgnet`. Slik navngir profesjonelle JavaScript-utviklere variablene sine.
 
-1. Les koden. Hva blir resultatet? **[Predict]**
-2. Lag fila `fisketur.js`, skriv av koden, og kjør programmet med `node fisketur.js`. Dette programmet trenger ingen argumenter. **[Run]**
+1. Les koden. Hva blir resultatet?
+2. Lag fila `fisketur.js`, skriv av koden, og kjør programmet med `node fisketur.js`. Dette programmet trenger ingen argumenter.
 
 For å få fisk bør fisken også like agnet. Vi kan sette sammen to vilkår med den logiske operatoren `&&`, som betyr **og**:
 
-3. Endre `if`-setningen slik: **[Modify]**
+3. Endre `if`-setningen slik:
 
 ```js
 if (fiskIVannet && likerAgnet) {
@@ -304,14 +298,14 @@ if (fiskIVannet && likerAgnet) {
 }
 ```
 
-4. Prøv følgende verdier ved å endre på kodelinje 1 og 2. Kjør programmet på nytt hver gang: **[Investigate]**
+4. Prøv følgende verdier ved å endre på kodelinje 1 og 2. Kjør programmet på nytt hver gang:
    - `fiskIVannet = false` og `likerAgnet = true`
    - `fiskIVannet = true` og `likerAgnet = true`
-5. Legg til en `else`-blokk slik at utskriften `Du får ikke fisk` vises dersom minst én av variablene er `false`. **[Modify]**
+5. Legg til en `else`-blokk slik at utskriften `Du får ikke fisk` vises dersom minst én av variablene er `false`.
 
 Den siste logiske operatoren er `!`, som betyr **ikke**. Uttrykket `!likerAgnet` er `true` nøyaktig når `likerAgnet` er `false` — altså det motsatte.
 
-6. Legg til følgende `if`-setning nederst i programmet, og kjør programmet med begge verdier av `likerAgnet`: **[Investigate]**
+6. Legg til følgende `if`-setning nederst i programmet, og kjør programmet med begge verdier av `likerAgnet`:
 
 ```js
 if (!likerAgnet) {
@@ -342,21 +336,21 @@ if (a > b) {
 
 Vi skal lage et program som finner det største av to tall, deretter av tre tall.
 
-1. Les koden. Hva blir resultatet av `node storst.js 7 4`? **[Predict]**
-2. Lag fila `storst.js`, skriv av koden, og kjør programmet. **[Run]**
-3. Legg til en `else`-blokk med utskriften `b er størst`. Kjør programmet med argumentene `7 4`, `3 9` og `5 5`. **[Modify]**
-4. Hva skrev programmet ut da tallene var like? Stemmer det? Endre `else {` til `else if (b > a) {`, og legg til en ny `else`-blokk med utskriften `a og b er like`. **[Investigate]**
+1. Les koden. Hva blir resultatet av `node storst.js 7 4`?
+2. Lag fila `storst.js`, skriv av koden, og kjør programmet.
+3. Legg til en `else`-blokk med utskriften `b er størst`. Kjør programmet med argumentene `7 4`, `3 9` og `5 5`.
+4. Hva skrev programmet ut da tallene var like? Stemmer det? Endre `else {` til `else if (b > a) {`, og legg til en ny `else`-blokk med utskriften `a og b er like`.
 
 Vi legger til et tredje tall `c`, og skal finne det største av `a`, `b` og `c`.
 
-5. Legg til kodelinja `let c = Number(process.argv[4]);` rett under `let b = ...`. **[Modify]**
+5. Legg til kodelinja `let c = Number(process.argv[4]);` rett under `let b = ...`.
 6. Endre `console.log`-linja slik at den også skriver ut verdien til `c`.
 
 For at `a` skal være størst, må `a` være større enn **både** `b` og `c`.
 
-7. Endre `if (a > b) {` til `if (a > b && a > c) {`. **[Modify]**
+7. Endre `if (a > b) {` til `if (a > b && a > c) {`.
 8. Endre `else if (b > a) {` på tilsvarende måte for å undersøke om `b` er størst.
-9. Fullfør programmet slik at det også fanger opp tilfellet der `c` er størst. Test med `node storst.js 3 8 5` og `node storst.js 2 4 9`. **[Modify]**
+9. Fullfør programmet slik at det også fanger opp tilfellet der `c` er størst. Test med `node storst.js 3 8 5` og `node storst.js 2 4 9`.
 
 > **⚠️ Merk:** Programmet tar ikke hensyn til at to eller tre av tallene kan være like.
 

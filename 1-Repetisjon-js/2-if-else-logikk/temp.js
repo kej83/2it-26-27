@@ -1,7 +1,8 @@
-let poeng = 0;
+let teller = 0;
 
-for (let i = 0; i < 3; i++)
-  poeng += 10;
-  console.log("Hallo!");
-
-console.log("Sluttpoeng:", poeng);
+while (teller < 5) {
+  if (teller = 5) {
+    console.log("Nå er vi på 5!");
+  }
+  teller++;
+}

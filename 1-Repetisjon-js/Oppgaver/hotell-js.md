@@ -30,9 +30,11 @@ const rl = readline.createInterface({
 
 // Stiller et spørsmål til brukeren
 rl.question('Hva heter du? ', (svar) => {
+    
   console.log(`Hei, ${svar}!`);
   
   // VIKTIG: Husk å lukke grensesnittet når du er ferdig!
+  // Fortsett med koden HER!
   rl.close();
 });
 

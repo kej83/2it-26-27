@@ -1,0 +1,14 @@
+{
+  "name": "eksempel-1",
+  "version": "1.0.0",
+  "description": "1. Åpne terminalen i samme mappe, og skriv:\r ```bash\r npm init -y\r ```",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

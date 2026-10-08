@@ -1,7 +1,5 @@
 # Node.js – Økt 2: Elevhefte
 
-Oct 8, 2026 · @Mufasa
-
 I dag lager du din første webserver. Node sender svar til nettleseren, og du ser resultatet på `http://localhost:3000`.
 
 ## Eksempel 1: Din første webserver

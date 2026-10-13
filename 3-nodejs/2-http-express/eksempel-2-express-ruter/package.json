@@ -1,0 +1,20 @@
+{
+  "name": "eksempel-2-express-ruter",
+  "version": "1.0.0",
+  "description": "Mitt 2. express prosjekt",
+  "keywords": [
+    "express",
+    "nodejs",
+    "routes"
+  ],
+  "license": "MIT",
+  "author": "jensern",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}

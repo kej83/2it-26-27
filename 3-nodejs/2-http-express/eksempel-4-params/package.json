@@ -1,0 +1,17 @@
+{
+  "name": "eksempel-4-params",
+  "version": "1.0.0",
+  "description": "Kjør disse for å sette opp:\r ```bash\r npm init -y\r npm pkg set type=module\r npm install express\r npm pkg set scripts.dev=\"node --watch app.js\"\r ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}

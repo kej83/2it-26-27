@@ -7,10 +7,15 @@ const PORT = 3000;
 // localhost:3000/
 app.use(express.static("public"));
 
-// Main rute (route på engelsk)
-// app.get("/", (req, res) => {
-//   res.send("<h1>Velkommen!</h1><p>Dette er min andre Express-app.</p>");
-// });
+
+app.get("/", (req, res) => {
+  console.log("morn");
+  res.sendFile("beta.html", {root:"public"});
+});
+
+app.get("/om", (req, res) => {
+  res.sendFile("om.html", {root:"public"});
+});
 
 app.listen(PORT, () => {
     console.log("Serveren kjører på http://localhost:3000")

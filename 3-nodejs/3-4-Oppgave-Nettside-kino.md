@@ -212,9 +212,11 @@ Legg denne ruten der kommentaren for filmrutene står i `app.js`:
 
 ```javascript
 app.get("/filmer", (req, res) => {
-  const liste = filmer
-    .map((film) => `<li><a href="/filmer/${film.id}">${film.tittel}</a> (${film.aldersgrense} år, ${film.lengde} min)</li>`)
-    .join("");
+  let liste = "";
+
+  filmer.forEach((film) => {
+    liste += `<li><a href="/filmer/${film.id}">${film.tittel}</a> (${film.aldersgrense} år, ${film.lengde} min)</li>`;
+  });
 
   res.send(`<!doctype html>
 <html lang="no">
@@ -232,6 +234,8 @@ app.get("/filmer", (req, res) => {
 });
 ```
 
+`liste` starter som en tom tekst. `forEach` går gjennom filmene én etter én, og `+=` legger til en ny `<li>` bakerst i teksten for hver film.
+
 Gå til `/filmer`. Du skal se fem filmer, og hver tittel er en lenke. Lenkene virker ikke ennå. Det fikser du i neste steg.
 
 Legg merke til at siden bruker samme `style.css` og samme meny som de faste sidene. Da ser hele nettsiden lik ut.
@@ -248,10 +252,13 @@ app.get("/filmer/:id", (req, res) => {
     return res.status(404).sendFile("404.html", { root: "public" });
   }
 
-  const tider = visninger
-    .filter((v) => v.filmId === film.id)
-    .map((v) => `<li>${v.dag} kl. ${v.tid}</li>`)
-    .join("");
+  let tider = "";
+
+  visninger.forEach((v) => {
+    if (v.filmId === film.id) {
+      tider += `<li>${v.dag} kl. ${v.tid}</li>`;
+    }
+  });
 
   res.send(`<!doctype html>
 <html lang="no">
@@ -277,7 +284,7 @@ Slik virker ruten:
 
 1. `find` leter etter filmen med riktig `id`. `req.params.id` er tekst, så vi gjør den om med `Number()`.
 2. Finnes ikke filmen, sendes 404-siden, og `return` stopper resten av funksjonen.
-3. `filter` plukker ut visningene som hører til denne filmen, og `map` gjør dem om til `<li>`-elementer.
+3. `forEach` går gjennom alle visningene. `if` sjekker om visningen hører til denne filmen, og bare da legges den til i `tider`.
 
 ### Steg 7: Test og lagre
 
@@ -346,7 +353,7 @@ Folk vil se hva som går på en bestemt dag. Lag ruten `/program/:dag`, for ekse
 - Gjør dagene på hver filmside til lenker til programmet for den dagen.
 - Legg til «Program» i menyen.
 
-Hint: bruk `filter` for å finne visningene, og `find` for å finne filmen til hver visning. For å sortere tekst som "18:00" kan du bruke `sort((a, b) => a.tid.localeCompare(b.tid))`.
+Hint: gå gjennom visningene med `forEach` og en `if`, slik som i steg 6, og bruk `find` for å finne filmen til hver visning. For å sortere tekst som "18:00" kan du bruke `sort((a, b) => a.tid.localeCompare(b.tid))`.
 
 ### 5. Hvilke filmer kan jeg se?
 

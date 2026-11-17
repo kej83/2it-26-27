@@ -3,7 +3,7 @@
 ## Oppgave 1
 Lag ruten `/bursdag/:navn/:alder` og malen bursdag.ejs. /bursdag/Kari/17 skal vise «Gratulerer med 17-årsdagen, Kari!» og «Neste år blir du 18.»
 
-Tips: For å sende flere data, gjør f.eks. slik:
+*Tips*: For å sende flere data, gjør f.eks. slik:
 ```js
 res.render("bursdag", {navn: mittNavn, alder: minAlder})
 ```

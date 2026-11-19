@@ -1,0 +1,1 @@
+export const handleliste = ["brød", "melk", "ost", "pultost", "smør"];
